@@ -15,6 +15,7 @@ public class CalculatorResultActivity extends AppCompatActivity {
         textoResultado = findViewById(R.id.textoResultado);
         Intent intent = getIntent();
         double result = intent.getDoubleExtra("resultado",0);
-        textoResultado.setText(String.valueOf(result));
+        int r = (int) result;
+        textoResultado.setText((r==result)?String.valueOf(r):String.valueOf(result));
     }
 }
