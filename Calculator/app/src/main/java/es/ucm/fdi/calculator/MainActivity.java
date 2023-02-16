@@ -22,9 +22,14 @@ public class MainActivity extends AppCompatActivity {
 
         operate.setOnClickListener(view -> {
 
-            double result = calculadora.suma(Double.parseDouble(x.getText().toString()),Double.parseDouble(y.getText().toString()));
+            double op1 = Double.parseDouble(x.getText().toString());
+            double op2 = Double.parseDouble(y.getText().toString());
+
+            double result = calculadora.suma(op1, op2);
+
             Intent intent = new Intent(this,CalculatorResultActivity.class);
             intent.putExtra("resultado", result);
+
             startActivity(intent);
 
         });

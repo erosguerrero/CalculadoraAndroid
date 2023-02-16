@@ -10,12 +10,29 @@ public class CalculatorResultActivity extends AppCompatActivity {
     private TextView textoResultado;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calculator_result);
+
         textoResultado = findViewById(R.id.textoResultado);
+
         Intent intent = getIntent();
-        double result = intent.getDoubleExtra("resultado",0);
-        int r = (int) result;
-        textoResultado.setText((r==result)?String.valueOf(r):String.valueOf(result));
+
+        Double result = intent.getDoubleExtra("resultado",0);
+        String text = String.valueOf(result);
+
+        if (isInt(result)){
+            text = String.valueOf(result.intValue());
+        }
+
+        textoResultado.setText(text);
+
+
+
+
+    }
+
+    private boolean isInt(double n){
+        return n == (int) n;
     }
 }
