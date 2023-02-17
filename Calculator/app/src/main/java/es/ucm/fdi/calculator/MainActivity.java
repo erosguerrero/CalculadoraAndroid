@@ -19,8 +19,10 @@ public class MainActivity extends AppCompatActivity {
         x = findViewById(R.id.op1);
         y = findViewById(R.id.op2);
         operate = findViewById(R.id.boton);
+        Log.d("MainActivity", "dentro de onCreate");
 
         operate.setOnClickListener(view -> {
+            Log.d("MainActivity", "dentro de onClickListener");
 
             double op1 = Double.parseDouble(x.getText().toString());
             double op2 = Double.parseDouble(y.getText().toString());

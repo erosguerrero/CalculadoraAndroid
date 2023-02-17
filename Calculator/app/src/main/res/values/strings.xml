@@ -3,4 +3,5 @@
     <string name="button_calculate">Calcular</string>
     <string name="textField_op1">Operador 1</string>
     <string name="textField_op2">Operador 2</string>
+    <string name="showResultMsg">El resultado es:</string>
 </resources>
