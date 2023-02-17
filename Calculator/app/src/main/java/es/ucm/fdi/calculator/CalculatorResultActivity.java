@@ -4,10 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class CalculatorResultActivity extends AppCompatActivity {
     private TextView textoResultado;
+    private Button back;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -27,6 +29,11 @@ public class CalculatorResultActivity extends AppCompatActivity {
 
         textoResultado.setText(text);
 
+        back = findViewById(R.id.backButton);
+        back.setOnClickListener(view -> {
+            Intent intent1 = new Intent(this,MainActivity.class);
+            startActivity(intent1);
+        });
 
 
 

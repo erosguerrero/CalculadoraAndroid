@@ -4,4 +4,6 @@
     <string name="textField_op1">Operador 1</string>
     <string name="textField_op2">Operador 2</string>
     <string name="showResultMsg">El resultado es:</string>
+    <string name="button_back">Atrás</string>
+    <string name="result_example">3.141592</string>
 </resources>
