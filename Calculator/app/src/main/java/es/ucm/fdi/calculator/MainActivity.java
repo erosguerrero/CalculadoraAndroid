@@ -19,20 +19,26 @@ public class MainActivity extends AppCompatActivity {
         x = findViewById(R.id.op1);
         y = findViewById(R.id.op2);
         operate = findViewById(R.id.boton);
-        Log.d("MainActivity", "dentro de onCreate");
+        Log.i("MainActivity", "dentro de onCreate");
 
         operate.setOnClickListener(view -> {
-            Log.d("MainActivity", "dentro de onClickListener");
+            Log.i("MainActivity", "dentro de onClickListener");
 
-            double op1 = Double.parseDouble(x.getText().toString());
-            double op2 = Double.parseDouble(y.getText().toString());
+            String xText = x.getText().toString();
+            String yText = y.getText().toString();
+            if(!xText.equals("") && !yText.equals("")){
+                double op1 = Double.parseDouble(x.getText().toString());
+                double op2 = Double.parseDouble(y.getText().toString());
 
-            double result = calculadora.suma(op1, op2);
+                double result = calculadora.suma(op1, op2);
 
-            Intent intent = new Intent(this,CalculatorResultActivity.class);
-            intent.putExtra("resultado", result);
+                Intent intent = new Intent(this,CalculatorResultActivity.class);
+                intent.putExtra("resultado", result);
 
-            startActivity(intent);
+                startActivity(intent);
+            } else {
+                Log.e("MainActivity", "Alguno de los operandos está vacío");
+            }
 
         });
 
