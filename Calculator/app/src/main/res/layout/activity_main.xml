@@ -264,7 +264,7 @@
         android:layout_margin="10dp"
         android:gravity="center|center_vertical"
         android:includeFontPadding="false"
-        android:text="•"
+        android:text="."
         android:textAlignment="center"
         android:textSize="60sp"
         app:cornerRadius="25dp"
