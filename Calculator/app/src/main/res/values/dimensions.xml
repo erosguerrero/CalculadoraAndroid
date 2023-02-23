@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="keyButtonSize">60sp</dimen>
-    <dimen name="marginButton">10dp</dimen>
+    <dimen name="marginButton">5sp</dimen>
     <dimen name="cornerRadioButton">25dp</dimen>
 </resources>

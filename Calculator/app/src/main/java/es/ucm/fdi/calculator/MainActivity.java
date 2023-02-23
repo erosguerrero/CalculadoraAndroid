@@ -16,12 +16,14 @@ public class MainActivity extends AppCompatActivity {
     private Calculator calculadora = new Calculator();
     private EditText x,y;
     private TextView operate;
-    private String op;
+    private String op = "";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        this.op = "11+112+3+4+5+1";
+
+        operate = findViewById(R.id.operationText);
+        //this.op = "11+112+3+4+5+1";
     }
     public void operates(View view){
         Log.i("MainActivity", "LOLOLOLdentro de onClickListener");
@@ -44,5 +46,20 @@ public class MainActivity extends AppCompatActivity {
     public void buttonToOperate(View view){
         TextView texto = (TextView) view;
         this.op+=texto.getText().toString();
+        operate.setText(op);
+    }
+
+    public void eraseLast(View view)
+    {
+        if(this.op.length() > 0)
+        {
+            String aux = this.op.substring(0, this.op.length()-1);
+            this.op = aux;
+            operate.setText(op);
+        }
+        else {
+            Log.e("MainActivity", "Se esta intentando borrar y no hay elementos");
+        }
+
     }
 }

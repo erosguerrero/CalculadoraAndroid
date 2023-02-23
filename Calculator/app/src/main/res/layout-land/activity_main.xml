@@ -5,6 +5,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center|center_vertical"
+        android:text="@string/app_name"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toTopOf="@+id/operationText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/operationText"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="40dp"
+        android:gravity="right|center_vertical"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toTopOf="@+id/number4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline10"
         android:layout_width="wrap_content"
@@ -61,228 +85,242 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.75" />
 
-    <Button
-        android:id="@+id/number1L"
+    <TextView
+        android:id="@+id/number1"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="@dimen/marginButton"
-        android:gravity="center|center_horizontal"
-        android:includeFontPadding="false"
+        android:background="@drawable/background_shape_button"
+        android:gravity="center_horizontal|center_vertical"
+        android:onClick="buttonToOperate"
         android:text="1"
-        android:textAlignment="center"
-        android:textSize="@dimen/keyButtonSize"
-        app:cornerRadius="@dimen/cornerRadioButton"
+        android:textColor="@color/textColorButton"
+        app:autoSizeTextType="uniform"
         app:layout_constraintBottom_toTopOf="@+id/guideline18"
         app:layout_constraintEnd_toStartOf="@+id/guideline10"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline17" />
 
-    <Button
-        android:id="@+id/number2L"
+    <TextView
+        android:id="@+id/number2"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="@dimen/marginButton"
-        android:gravity="center|center_horizontal"
-        android:includeFontPadding="false"
+        android:background="@drawable/background_shape_button"
+        android:gravity="center_horizontal|center_vertical"
+        android:onClick="buttonToOperate"
         android:text="2"
-        android:textAlignment="center"
-        android:textSize="@dimen/keyButtonSize"
-        app:cornerRadius="@dimen/cornerRadioButton"
+        android:textColor="@color/textColorButton"
+        app:autoSizeTextType="uniform"
         app:layout_constraintBottom_toTopOf="@+id/guideline18"
         app:layout_constraintEnd_toStartOf="@+id/guideline11"
         app:layout_constraintStart_toStartOf="@+id/guideline10"
         app:layout_constraintTop_toTopOf="@+id/guideline17" />
 
-    <Button
-        android:id="@+id/number3L"
+    <TextView
+        android:id="@+id/number3"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="@dimen/marginButton"
-        android:gravity="center|center_horizontal"
-        android:includeFontPadding="false"
+        android:background="@drawable/background_shape_button"
+        android:gravity="center_horizontal|center_vertical"
+        android:onClick="buttonToOperate"
         android:text="3"
-        android:textAlignment="center"
-        android:textSize="@dimen/keyButtonSize"
-        app:cornerRadius="@dimen/cornerRadioButton"
+        android:textColor="@color/textColorButton"
+        app:autoSizeTextType="uniform"
         app:layout_constraintBottom_toTopOf="@+id/guideline18"
         app:layout_constraintEnd_toStartOf="@+id/guideline12"
         app:layout_constraintStart_toStartOf="@+id/guideline11"
         app:layout_constraintTop_toTopOf="@+id/guideline17" />
 
-    <Button
-        android:id="@+id/number4L"
+    <TextView
+        android:id="@+id/number4"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="@dimen/marginButton"
-        android:gravity="center|center_horizontal"
-        android:includeFontPadding="false"
+        android:background="@drawable/background_shape_button"
+        android:gravity="center_horizontal|center_vertical"
+        android:onClick="buttonToOperate"
         android:text="4"
-        android:textAlignment="center"
-        android:textSize="@dimen/keyButtonSize"
-        app:cornerRadius="@dimen/cornerRadioButton"
+        android:textColor="@color/textColorButton"
+        app:autoSizeTextType="uniform"
         app:layout_constraintBottom_toTopOf="@+id/guideline18"
         app:layout_constraintEnd_toStartOf="@+id/guideline13"
         app:layout_constraintStart_toStartOf="@+id/guideline12"
         app:layout_constraintTop_toTopOf="@+id/guideline17" />
 
-    <Button
-        android:id="@+id/number5L"
+    <TextView
+        android:id="@+id/number5"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="@dimen/marginButton"
-        android:gravity="center|center_horizontal"
-        android:includeFontPadding="false"
+        android:background="@drawable/background_shape_button"
+        android:gravity="center_horizontal|center_vertical"
+        android:onClick="buttonToOperate"
         android:text="5"
-        android:textAlignment="center"
-        android:textSize="@dimen/keyButtonSize"
-        app:cornerRadius="@dimen/cornerRadioButton"
+        android:textColor="@color/textColorButton"
+        app:autoSizeTextType="uniform"
         app:layout_constraintBottom_toTopOf="@+id/guideline18"
         app:layout_constraintEnd_toStartOf="@+id/guideline15"
         app:layout_constraintStart_toStartOf="@+id/guideline13"
         app:layout_constraintTop_toTopOf="@+id/guideline17" />
 
-    <Button
-        android:id="@+id/number6L"
+    <TextView
+        android:id="@+id/number6"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="@dimen/marginButton"
-        android:gravity="center|center_horizontal"
-        android:includeFontPadding="false"
+        android:background="@drawable/background_shape_button"
+        android:gravity="center_horizontal|center_vertical"
+        android:onClick="buttonToOperate"
         android:text="6"
-        android:textAlignment="center"
-        android:textSize="@dimen/keyButtonSize"
-        app:cornerRadius="@dimen/cornerRadioButton"
+        android:textColor="@color/textColorButton"
+        app:autoSizeTextType="uniform"
         app:layout_constraintBottom_toTopOf="@+id/guideline18"
         app:layout_constraintEnd_toStartOf="@+id/guideline16"
         app:layout_constraintStart_toStartOf="@+id/guideline15"
         app:layout_constraintTop_toTopOf="@+id/guideline17" />
 
-    <Button
-        android:id="@+id/eraseButtonL"
+    <TextView
+        android:id="@+id/eraseButton"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="@dimen/marginButton"
-        android:gravity="center|center_horizontal"
-        android:includeFontPadding="false"
+        android:background="@drawable/background_shape_button"
+        android:gravity="center_horizontal|center_vertical"
+        android:onClick="eraseLast"
         android:text="←"
-        android:textAlignment="center"
-        android:textSize="@dimen/keyButtonSize"
-        app:cornerRadius="@dimen/cornerRadioButton"
+        android:textColor="@color/textColorButton"
+        app:autoSizeTextType="uniform"
         app:layout_constraintBottom_toTopOf="@+id/guideline18"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline16"
         app:layout_constraintTop_toTopOf="@+id/guideline17" />
 
-    <Button
-        android:id="@+id/number7L"
+    <TextView
+        android:id="@+id/number7"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="@dimen/marginButton"
-        android:gravity="center|center_horizontal"
-        android:includeFontPadding="false"
+        android:background="@drawable/background_shape_button"
+        android:gravity="center_horizontal|center_vertical"
+        android:onClick="buttonToOperate"
         android:text="7"
-        android:textAlignment="center"
-        android:textSize="@dimen/keyButtonSize"
-        app:cornerRadius="@dimen/cornerRadioButton"
+        android:textColor="@color/textColorButton"
+        app:autoSizeTextType="uniform"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline10"
+        app:layout_constraintHorizontal_bias="0.8"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline18" />
+        app:layout_constraintTop_toTopOf="@+id/guideline18"
+        app:layout_constraintVertical_bias="1.0" />
 
-    <Button
-        android:id="@+id/number8L"
+    <TextView
+        android:id="@+id/number8"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="@dimen/marginButton"
-        android:gravity="center|center_horizontal"
-        android:includeFontPadding="false"
+        android:background="@drawable/background_shape_button"
+        android:gravity="center_horizontal|center_vertical"
+        android:onClick="buttonToOperate"
         android:text="8"
-        android:textAlignment="center"
-        android:textSize="@dimen/keyButtonSize"
-        app:cornerRadius="@dimen/cornerRadioButton"
+        android:textColor="@color/textColorButton"
+        app:autoSizeTextType="uniform"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline11"
+        app:layout_constraintHorizontal_bias="0.8"
         app:layout_constraintStart_toStartOf="@+id/guideline10"
-        app:layout_constraintTop_toTopOf="@+id/guideline18" />
+        app:layout_constraintTop_toTopOf="@+id/guideline18"
+        app:layout_constraintVertical_bias="1.0" />
 
-    <Button
-        android:id="@+id/number9L"
+    <TextView
+        android:id="@+id/number9"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="@dimen/marginButton"
-        android:gravity="center|center_horizontal"
-        android:includeFontPadding="false"
+        android:background="@drawable/background_shape_button"
+        android:gravity="center_horizontal|center_vertical"
+        android:onClick="buttonToOperate"
         android:text="9"
-        android:textAlignment="center"
-        android:textSize="@dimen/keyButtonSize"
-        app:cornerRadius="@dimen/cornerRadioButton"
+        android:textColor="@color/textColorButton"
+        app:autoSizeTextType="uniform"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline12"
+        app:layout_constraintHorizontal_bias="0.8"
         app:layout_constraintStart_toStartOf="@+id/guideline11"
-        app:layout_constraintTop_toTopOf="@+id/guideline18" />
+        app:layout_constraintTop_toTopOf="@+id/guideline18"
+        app:layout_constraintVertical_bias="1.0" />
 
-    <Button
-        android:id="@+id/number0L"
+    <TextView
+        android:id="@+id/number0"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="@dimen/marginButton"
-        android:gravity="center|center_horizontal"
-        android:includeFontPadding="false"
+        android:background="@drawable/background_shape_button"
+        android:gravity="center_horizontal|center_vertical"
+        android:onClick="buttonToOperate"
         android:text="0"
-        android:textAlignment="center"
-        android:textSize="@dimen/keyButtonSize"
-        app:cornerRadius="@dimen/cornerRadioButton"
+        android:textColor="@color/textColorButton"
+        app:autoSizeTextType="uniform"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline13"
+        app:layout_constraintHorizontal_bias="0.8"
         app:layout_constraintStart_toStartOf="@+id/guideline12"
-        app:layout_constraintTop_toTopOf="@+id/guideline18" />
+        app:layout_constraintTop_toTopOf="@+id/guideline18"
+        app:layout_constraintVertical_bias="1.0" />
 
-    <Button
-        android:id="@+id/pointButtonL"
+    <TextView
+        android:id="@+id/pointButton"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="@dimen/marginButton"
-        android:gravity="center|center_horizontal"
-        android:includeFontPadding="false"
+        android:background="@drawable/background_shape_button"
+        android:gravity="center_horizontal|center_vertical"
+        android:onClick="buttonToOperate"
         android:text="."
-        android:textAlignment="center"
-        android:textSize="@dimen/keyButtonSize"
-        app:cornerRadius="@dimen/cornerRadioButton"
+        android:textColor="@color/textColorButton"
+        app:autoSizeTextType="uniform"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline15"
+        app:layout_constraintHorizontal_bias="0.8"
         app:layout_constraintStart_toStartOf="@+id/guideline13"
-        app:layout_constraintTop_toTopOf="@+id/guideline18" />
+        app:layout_constraintTop_toTopOf="@+id/guideline18"
+        app:layout_constraintVertical_bias="1.0" />
 
-    <Button
-        android:id="@+id/plusButtonL"
+    <TextView
+        android:id="@+id/plusButton"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="@dimen/marginButton"
-        android:gravity="center|center_horizontal"
-        android:includeFontPadding="false"
+        android:background="@drawable/background_shape_button"
+        android:gravity="center_horizontal|center_vertical"
         android:text="+"
-        android:textAlignment="center"
-        android:textSize="@dimen/keyButtonSize"
-        app:cornerRadius="@dimen/cornerRadioButton"
+        android:textColor="@color/textColorButton"
+        app:autoSizeTextType="uniform"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline16"
+        app:layout_constraintHorizontal_bias="0.8"
         app:layout_constraintStart_toStartOf="@+id/guideline15"
-        app:layout_constraintTop_toTopOf="@+id/guideline18" />
+        app:layout_constraintTop_toTopOf="@+id/guideline18"
+        app:layout_constraintVertical_bias="1.0"
+        android:onClick="buttonToOperate" />
 
-    <Button
-        android:id="@+id/equalsButtonL"
+    <TextView
+        android:id="@+id/equalsButton"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="@dimen/marginButton"
-        android:gravity="center|center_horizontal"
-        android:includeFontPadding="false"
+        android:background="@drawable/background_shape_button"
+        android:gravity="center_horizontal|center_vertical"
+        android:onClick="operates"
         android:text="="
-        android:textAlignment="center"
-        android:textSize="@dimen/keyButtonSize"
-        app:cornerRadius="@dimen/cornerRadioButton"
+        android:textColor="@color/textColorButton"
+        app:autoSizeTextType="uniform"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.8"
         app:layout_constraintStart_toStartOf="@+id/guideline16"
-        app:layout_constraintTop_toTopOf="@+id/guideline18" />
+        app:layout_constraintTop_toTopOf="@+id/guideline18"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
