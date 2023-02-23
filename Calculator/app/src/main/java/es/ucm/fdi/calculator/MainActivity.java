@@ -20,27 +20,27 @@ public class MainActivity extends AppCompatActivity {
         y = findViewById(R.id.op2);
         operate = findViewById(R.id.boton);
         Log.i("MainActivity", "dentro de onCreate");
+        if(operate != null) {
+            operate.setOnClickListener(view -> {
+                Log.i("MainActivity", "dentro de onClickListener");
 
-        operate.setOnClickListener(view -> {
-            Log.i("MainActivity", "dentro de onClickListener");
+                String xText = x.getText().toString();
+                String yText = y.getText().toString();
+                if (!xText.equals("") && !yText.equals("")) {
+                    double op1 = Double.parseDouble(x.getText().toString());
+                    double op2 = Double.parseDouble(y.getText().toString());
 
-            String xText = x.getText().toString();
-            String yText = y.getText().toString();
-            if(!xText.equals("") && !yText.equals("")){
-                double op1 = Double.parseDouble(x.getText().toString());
-                double op2 = Double.parseDouble(y.getText().toString());
+                    double result = calculadora.suma(op1, op2);
 
-                double result = calculadora.suma(op1, op2);
+                    Intent intent = new Intent(this, CalculatorResultActivity.class);
+                    intent.putExtra("resultado", result);
 
-                Intent intent = new Intent(this,CalculatorResultActivity.class);
-                intent.putExtra("resultado", result);
+                    startActivity(intent);
+                } else {
+                    Log.e("MainActivity", "Alguno de los operandos está vacío");
+                }
 
-                startActivity(intent);
-            } else {
-                Log.e("MainActivity", "Alguno de los operandos está vacío");
-            }
-
-        });
-
+            });
+        }
     }
 }
