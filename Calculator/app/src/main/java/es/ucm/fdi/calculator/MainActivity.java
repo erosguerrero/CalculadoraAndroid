@@ -14,7 +14,9 @@ import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
     private Calculator calculadora = new Calculator();
-    private EditText x,y;
+
+    private static final String TAG = "MainActivity";
+    private static final String KEY_OP_ACTUAL = "opActual";
     private TextView operate;
     private String op = "";
     @Override
@@ -23,10 +25,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         operate = findViewById(R.id.operationText);
+
+        if (savedInstanceState != null) {
+            Log.i(TAG, "Dentro de comprobacion de savedInstance en onCreate");
+            this.op = savedInstanceState.getString(KEY_OP_ACTUAL, "");
+            operate.setText(op);
+        }
         //this.op = "11+112+3+4+5+1";
     }
+
     public void operates(View view){
-        Log.i("MainActivity", "LOLOLOLdentro de onClickListener");
+        Log.i(TAG, "dentro de onClickListener");
 
         if (!this.op.equals("")) {
 
@@ -39,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
             intent.putExtra("resultado", ant);
             startActivity(intent);
         } else {
-            Log.e("MainActivity", "Alguno de los operandos está vacío");
+            Log.e(TAG, "Alguno de los operandos está vacío");
         }
     }
 
@@ -58,8 +67,15 @@ public class MainActivity extends AppCompatActivity {
             operate.setText(op);
         }
         else {
-            Log.e("MainActivity", "Se esta intentando borrar y no hay elementos");
+            Log.e(TAG, "Se esta intentando borrar y no hay elementos");
         }
 
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+        Log.i(TAG, "onSaveInstanceState");
+        savedInstanceState.putString(KEY_OP_ACTUAL, this.op);
     }
 }
