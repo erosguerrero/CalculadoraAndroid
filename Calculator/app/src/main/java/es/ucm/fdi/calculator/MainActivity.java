@@ -12,35 +12,33 @@ public class MainActivity extends AppCompatActivity {
     private Calculator calculadora = new Calculator();
     private EditText x,y;
     private Button operate;
+    private String op;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        x = findViewById(R.id.op1);
-        y = findViewById(R.id.op2);
-        operate = findViewById(R.id.boton);
+
+        this.op = "11+112+3+4+5+1";
+
+        operate = findViewById(R.id.equalsButton);
         Log.i("MainActivity", "dentro de onCreate");
-        if(operate != null) {
             operate.setOnClickListener(view -> {
                 Log.i("MainActivity", "dentro de onClickListener");
 
-                String xText = x.getText().toString();
-                String yText = y.getText().toString();
-                if (!xText.equals("") && !yText.equals("")) {
-                    double op1 = Double.parseDouble(x.getText().toString());
-                    double op2 = Double.parseDouble(y.getText().toString());
+                if (!this.op.equals("")) {
 
-                    double result = calculadora.suma(op1, op2);
+                    Double ant = 0.0;
+                    for (String op : op.split("\\+")) {
+                        ant = calculadora.suma(ant,Double.parseDouble(op));
+                    }
 
                     Intent intent = new Intent(this, CalculatorResultActivity.class);
-                    intent.putExtra("resultado", result);
-
+                    intent.putExtra("resultado", ant);
                     startActivity(intent);
                 } else {
                     Log.e("MainActivity", "Alguno de los operandos está vacío");
                 }
 
             });
-        }
     }
 }
