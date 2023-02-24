@@ -40,8 +40,10 @@ public class MainActivity extends AppCompatActivity {
         if (!this.op.equals("")) {
 
             Double ant = 0.0;
+
             for (String op : op.split("\\+")) {
-                ant = calculadora.suma(ant,Double.parseDouble(op));
+                if (!op.equals(""))
+                    ant = calculadora.suma(ant,Double.parseDouble(op));
             }
 
             Intent intent = new Intent(this, CalculatorResultActivity.class);
@@ -53,9 +55,35 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void buttonToOperate(View view){
+
         TextView texto = (TextView) view;
-        this.op+=texto.getText().toString();
-        operate.setText(op);
+        String operation = texto.getText().toString();
+
+        boolean correct = true;
+
+        if (operation.equals(".")){
+
+            char[] chars = this.op.toCharArray();
+
+
+            for (int i = chars.length - 1; i >= 0 && chars[i] != '+'; i--){
+                if (chars[i] == '.')
+                    correct = false;
+            }
+
+            if (chars.length == 0 || (chars.length > 0 && chars[chars.length - 1] == '+'))
+                correct = false;
+
+        }
+
+
+        if (correct){
+            this.op += operation;
+            operate.setText(op);
+        }
+
+
+
     }
 
     public void eraseLast(View view)
