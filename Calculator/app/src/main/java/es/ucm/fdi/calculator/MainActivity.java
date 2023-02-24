@@ -60,10 +60,9 @@ public class MainActivity extends AppCompatActivity {
         String operation = texto.getText().toString();
 
         boolean correct = true;
+        char[] chars = this.op.toCharArray();
 
         if (operation.equals(".")){
-
-            char[] chars = this.op.toCharArray();
 
 
             for (int i = chars.length - 1; i >= 0 && chars[i] != '+'; i--){
@@ -74,6 +73,9 @@ public class MainActivity extends AppCompatActivity {
             if (chars.length == 0 || (chars.length > 0 && chars[chars.length - 1] == '+'))
                 correct = false;
 
+        }
+        else if (operation.equals("+") && chars.length > 0){
+            correct = chars[chars.length - 1] != '+';
         }
 
 
